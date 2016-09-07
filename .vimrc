@@ -7,46 +7,40 @@ syntax on
 filetype plugin indent on
 
 let mapleader=","
-set colorcolumn=80
+
 highlight ColorColumn ctermbg=23
-hi Visual ctermbg=23 guibg=LightBlue gui=none
-set expandtab
-set softtabstop=2
-set tabstop=2
-set shiftwidth=2
-" set listchars=tab:--,trail:~,extends:>,precedes:<,nbsp:.
-" set list
-set mouse=a
-set splitbelow
-set noet
-set modelines=0
-set clipboard=unnamed
-set synmaxcol=128
-set ttyscroll=10
-set encoding=utf-8
-set nowrap
-set number
-set nowritebackup
-set noswapfile
-set nobackup
-set ignorecase
-set smartcase
-set wrap
-set linebreak
-set nolist
-" Tips:
-set showbreak=⇇
-imap <C-space> <ESC>
+set colorcolumn=80		" Vertical line 80 characters
+" set noet 						" Do not replace tab by spaces in insert mode
+set expandtab					" Convert tab to spaces
+set ruler							" Show cursor position
+set tabstop=2					" Insert 2 spaces for a tab
+set shiftwidth=2			" Reindent by 2 spaces characters when using << or >>
+set mouse=a						" Enable mouse
+set clipboard=unnamed " Use the system clipboard (not vim's)
+set encoding=utf-8 		" Use utf-8
+" set nowrap 					" Stop lines breaking
+set wrap 							" Word wrapping
+set linebreak 				" Break line
+set showbreak=⇇ 			" Show ⇇ symbol between 2 breaking lines
+set number 						" Show lines number
+set noswapfile 				" Don't save buffer change to a swap file
+set nobackup 					" No backup file (tmp file with ~)
+set smartcase 				" Smart case when searching
+
+" Launch go tests of the current folder
 map tt :GoTest<CR>
+
+" Go to the definition of a go function (<3)
 map ff :GoDef<CR>
+
 map mm :!make re<CR>
 map gp :!git grep ""<left>
-:autocmd BufWritePost *.go :GoImports
-" autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow
 
-if has("autocmd")
-        au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
+" Run goimports binary every time a .go file is saved
+:autocmd BufWritePost *.go :GoImports
+
+" Run golint binary every time a .go file is saved
+" autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow
 
 " Autocomplete with tab:
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -79,28 +73,33 @@ au BufRead,BufNewFile *.go set filetype=go
 " No show command:
 autocmd VimEnter * set nosc
 
-" Jump to the next row on long lines:
-map <Down> gj
-map <Up>   gk
+" Always keep the cursor on the center
 " nnoremap j jzz
 " nnoremap k kzz
 
 " Buffers:
+" Easily create new buffers
 nmap <leader><left>   :leftabove  vnew<cr>
 nmap <leader><right>  :rightbelow vnew<cr>
 nmap <leader><up>     :leftabove  new<cr>
 nmap <leader><down>   :rightbelow new<cr>
+
+" Easily move between buffers
 noremap <tab> <c-w><c-w>
 noremap <s-tab> <c-w><c-h>
+
 nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
 
 " Tab:
+" Easily create new tabs
+noremap <leader>t :tabnew<CR>
+
+"Easily move between tabs
 nmap <left> :tabp<cr>
 nmap <right> :tabn<cr>
-noremap <leader>t :tabnew<CR>
 
 " NERDTree:
 map <C-e> :NERDTreeToggle<CR>
@@ -255,7 +254,7 @@ if has("gui_running")
         set gfn=Menlo:h13
 endif
 
-" Syntastic
+" Syntastic <3
 let g:syntastic_check_on_wq = 1
 let g:syntastic_enable_highlighting = 0
 let g:syntastic_check_on_open=1
@@ -265,5 +264,5 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_mode_map={"mode":"active", "active_filetypes": [], "passive_filetypes": []}
 
-" YCM
+" YouCompleteMe
 let g:ycm_show_diagnostics_ui = 0
