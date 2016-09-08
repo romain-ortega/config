@@ -25,10 +25,14 @@ set showbreak=⇇ 			" Show ⇇ symbol between 2 breaking lines
 set number 						" Show lines number
 set noswapfile 				" Don't save buffer change to a swap file
 set nobackup 					" No backup file (tmp file with ~)
+set ignorecase
 set smartcase 				" Smart case when searching
+set lazyredraw
+set hid
+set si                " Smart indent
 
 " Launch go tests of the current folder
-map tt :GoTest<CR>
+" map tt :GoTest<CR>
 
 " Go to the definition of a go function (<3)
 map ff :GoDef<CR>
@@ -41,6 +45,10 @@ map gp :!git grep ""<left>
 
 " Run golint binary every time a .go file is saved
 " autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow
+
+if has("autocmd")
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 " Autocomplete with tab:
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -64,6 +72,7 @@ autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufWritePre *.go :%s/\s\+$//e
 autocmd BufWritePre *.haml :%s/\s\+$//e
 autocmd BufWritePre *.html :%s/\s\+$//e
+autocmd BufWritePre *.hbs :%s/\s\+$//e
 autocmd BufWritePre *.scss :%s/\s\+$//e
 autocmd BufWritePre *.slim :%s/\s\+$//e
 
@@ -79,27 +88,27 @@ autocmd VimEnter * set nosc
 
 " Buffers:
 " Easily create new buffers
-nmap <leader><left>   :leftabove  vnew<cr>
-nmap <leader><right>  :rightbelow vnew<cr>
-nmap <leader><up>     :leftabove  new<cr>
-nmap <leader><down>   :rightbelow new<cr>
+nmap <C-s-h>      :leftabove  vnew<cr>
+nmap <C-s-l>      :rightbelow vnew<cr>
+nmap <C-s-k>      :leftabove  new<cr>
+nmap <C-s-j>      :rightbelow new<cr>
 
 " Easily move between buffers
 noremap <tab> <c-w><c-w>
 noremap <s-tab> <c-w><c-h>
 
-nnoremap <C-j> <C-W><C-J>
-nnoremap <C-k> <C-W><C-K>
-nnoremap <C-l> <C-W><C-L>
-nnoremap <C-h> <C-W><C-H>
+nnoremap <C-left> <C-W><C-J>
+nnoremap <C-right> <C-W><C-K>
+nnoremap <C-up> <C-W><C-L>
+nnoremap <C-down> <C-W><C-H>
 
 " Tab:
 " Easily create new tabs
-noremap <leader>t :tabnew<CR>
+noremap t :tabnew<CR>
 
 "Easily move between tabs
-nmap <left> :tabp<cr>
-nmap <right> :tabn<cr>
+nmap <s-j> :tabp<cr>
+nmap <s-k> :tabn<cr>
 
 " NERDTree:
 map <C-e> :NERDTreeToggle<CR>
@@ -218,13 +227,9 @@ if !exists('g:neocomplcache_keyword_patterns')
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType hbs,html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -240,18 +245,13 @@ let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " Macvim
 if has("gui_running")
-        map <D-d> :TagbarToggle<CR>
-        imap <D-BS> <ESC>ddi
-        imap <D-s> <ESC>:w<CR>li
-        noremap <D-s> :w
-        syntax on
-        " colorscheme one
-        colorscheme material-theme
-        set guioptions-=r
-        set guioptions-=R
-        set guioptions-=L
-        set background=dark
-        set gfn=Menlo:h13
+  syntax on
+  " colorscheme one
+  " colorscheme material-theme
+  colorscheme lucario
+  set guioptions-=r
+  set guioptions-=R
+  set guioptions-=L
 endif
 
 " Syntastic <3
@@ -265,4 +265,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_mode_map={"mode":"active", "active_filetypes": [], "passive_filetypes": []}
 
 " YouCompleteMe
+let g:ycm_path_to_python_interpreter="/usr/bin/python"
 let g:ycm_show_diagnostics_ui = 0
+let g:tern_show_argument_hints='on_hold'
+let g:tern_map_keys=1

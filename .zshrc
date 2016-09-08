@@ -32,6 +32,8 @@ alias la='ls -a'
 alias lla='ls -la'
 MSG='auto'
 alias gm="git commit -m \'auto\'"
+alias gs="git stash"
+alias gsp="git stash pop"
 alias auto='make fclean; git add *; gm; git push'
 alias gen="~/c/.project/gen"
 alias c='clear'
@@ -77,7 +79,7 @@ unsetopt bg_nice
 unsetopt hup
 
 ###############################################
-# Usefull stuff
+# Trucs utiles
 ###############################################
 
 ###############################################
