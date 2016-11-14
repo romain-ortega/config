@@ -10,26 +10,26 @@ let mapleader=","
 
 highlight ColorColumn ctermbg=23
 set colorcolumn=80		" Vertical line 80 characters
-" set noet 						" Do not replace tab by spaces in insert mode
-set expandtab					" Convert tab to spaces
-set ruler							" Show cursor position
-set tabstop=2					" Insert 2 spaces for a tab
-set shiftwidth=2			" Reindent by 2 spaces characters when using << or >>
-set mouse=a						" Enable mouse
-set clipboard=unnamed " Use the system clipboard (not vim's)
+" set noet 			" Do not replace tab by spaces in insert mode
+set expandtab			" Convert tab to spaces
+set ruler			" Show cursor position
+set tabstop=2			" Insert 2 spaces for a tab
+set shiftwidth=2		" Reindent by 2 spaces characters when using << or >>
+set mouse=a			" Enable mouse
+set clipboard=unnamed 		" Use the system clipboard (not vim's)
 set encoding=utf-8 		" Use utf-8
-" set nowrap 					" Stop lines breaking
-set wrap 							" Word wrapping
-set linebreak 				" Break line
-set showbreak=⇇ 			" Show ⇇ symbol between 2 breaking lines
-set number 						" Show lines number
-set noswapfile 				" Don't save buffer change to a swap file
-set nobackup 					" No backup file (tmp file with ~)
+" set nowrap 			" Stop lines breaking
+set wrap 			" Word wrapping
+set linebreak 			" Break line
+set showbreak=⇇ 		" Show ⇇ symbol between 2 breaking lines
+set number 			" Show lines number
+set noswapfile 			" Don't save buffer change to a swap file
+set nobackup 			" No backup file (tmp file with ~)
 set ignorecase
-set smartcase 				" Smart case when searching
+set smartcase 			" Smart case when searching
 set lazyredraw
 set hid
-set si                " Smart indent
+set si                		" Smart indent
 
 " Launch go tests of the current folder
 " map tt :GoTest<CR>
