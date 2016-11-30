@@ -30,6 +30,10 @@ Easy folding with `<space>`
 ![Preview](https://raw.githubusercontent.com/romain-ortega/config/master/img/fold.gif)
 ***
 
+Easy align
+![Preview](https://raw.githubusercontent.com/romain-ortega/config/master/img/easy_align.gif)
+***
+
 Vim undo tree in style with `<leader>gu`
 ![Preview](https://raw.githubusercontent.com/romain-ortega/config/master/img/gundo.png)
 ***
