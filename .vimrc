@@ -8,35 +8,34 @@ call vundle#begin()
 " Plugins list
 "*****************************************************************************
 
-Plugin 'VundleVim/Vundle.vim' " Let Vundle manage Vundle
-Plugin 'scrooloose/nerdtree' " File tree
-Plugin 'scrooloose/nerdcommenter' " Smart comments
-Plugin 'tpope/vim-fugitive' " Git commands (:Gblame, :Gdiff, ..)
-Plugin 'ctrlpvim/ctrlp.vim' " Find file easily
-Plugin 'vim-airline/vim-airline' " Visual bar (at the bottom) and theme
+Plugin 'VundleVim/Vundle.vim'            " Let Vundle manage Vundle
+Plugin 'scrooloose/nerdtree'             " File tree
+Plugin 'scrooloose/nerdcommenter'        " Smart comments
+Plugin 'tpope/vim-fugitive'              " Git commands (:Gblame, :Gdiff, ..)
+Plugin 'ctrlpvim/ctrlp.vim'              " Find file easily
+Plugin 'vim-airline/vim-airline'         " Visual bar (at the bottom) and theme
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'flazz/vim-colorschemes' " Packages themes
-Plugin 'airblade/vim-gitgutter' " Shows a git diff in the gutter (sign column) and stages/undoes hunks
-Plugin 'sheerun/vim-polyglot' " A collection of language packs for Vim
-Plugin 'vim-scripts/CSApprox' " Make gvim-only colorschemes work transparently in terminal vim
+Plugin 'flazz/vim-colorschemes'          " Packages themes
+Plugin 'airblade/vim-gitgutter'          " Shows a git diff in the gutter (sign column) and stages/undoes hunks
+Plugin 'sheerun/vim-polyglot'            " A collection of language packs for Vim
+Plugin 'vim-scripts/CSApprox'            " Make gvim-only colorschemes work transparently in terminal vim
 Plugin 'bronson/vim-trailing-whitespace' " This plugin causes all trailing whitespace to be highlighted
-Plugin 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pair
-Plugin 'majutsushi/tagbar' " Tagbar displays the tags of the current file in a sidebar
-Plugin 'scrooloose/syntastic' " Syntax checking hacks for vim
-Plugin 'terryma/vim-multiple-cursors' " Multiple Cursors
-Plugin 'Yggdroot/indentLine' " Display the indention levels with thin vertical lines
-Plugin 'Shougo/vimproc.vim' " Interactive command execution in Vim
-Plugin 'xolox/vim-misc' " Vim Session (:SaveSession, :OpenSession, :CloseSession)
+Plugin 'jiangmiao/auto-pairs'            " Insert or delete brackets, parens, quotes in pair
+Plugin 'majutsushi/tagbar'               " Tagbar displays the tags of the current file in a sidebar
+Plugin 'scrooloose/syntastic'            " Syntax checking hacks for vim
+Plugin 'terryma/vim-multiple-cursors'    " Multiple Cursors
+Plugin 'Yggdroot/indentLine'             " Display the indention levels with thin vertical lines
+Plugin 'Shougo/vimproc.vim'              " Interactive command execution in Vim
+Plugin 'xolox/vim-misc'                  " Vim Session (:SaveSession, :OpenSession, :CloseSession)
 Plugin 'xolox/vim-session'
-Plugin 'SirVer/ultisnips' " Snippets
+Plugin 'SirVer/ultisnips'                " Snippets
 Plugin 'honza/vim-snippets'
-Plugin 'fatih/vim-go' " Golang
-Plugin 'dsawardekar/ember.vim' " Ember.js
-Plugin 'junegunn/vim-easy-align' " Easy align
-Plugin 'sjl/gundo.vim' " Visualize Vim's undo tree
-Plugin 'suan/vim-instant-markdown' " Live refresh when writing markdown
-Plugin 'yegappan/mru' " See most recent edited files
-
+Plugin 'fatih/vim-go'                    " Golang
+Plugin 'dsawardekar/ember.vim'           " Ember.js
+Plugin 'junegunn/vim-easy-align'         " Easy align
+Plugin 'sjl/gundo.vim'                   " Visualize Vim's undo tree
+Plugin 'suan/vim-instant-markdown'       " Live refresh when writing markdown
+Plugin 'yegappan/mru'                    " See most recent edited files
 
 " Custom bundles
 Plugin 'tpope/vim-surround'
@@ -74,35 +73,35 @@ let mapleader=","
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " highlight ColorColumn ctermbg=23
-" set colorcolumn=79 								" Vertical line 80 characters
-set ruler														" Show cursor position
-set expandtab 											" Use spaces instead of tabs
-set smarttab 												" Be smart when using tabs
-set tabstop=2												" Insert 2 spaces for a tab
-set shiftwidth=2										" Reindent by 2 spaces characters when using << or >>
-set noet 														" Do not replace tab by spaces in insert mode
-set mouse=a													" Enable mouse
-set clipboard=unnamed 							" Use the system clipboard (not vim's)
-" set nowrap 												" Stop lines breaking
-set wrap 														" Word wrapping
-set linebreak 											" Break line
-set showbreak=⇇ 										" Show ⇇ symbol between 2 breaking lines
-set number 													" Show lines number
-set noswapfile                      " No swap file
-set backup                          " Turn backup on
-set backupdir=$HOME/.vim/backups    " Set backup files directory
-set undofile                        " Turn persistent undo on
-set undodir=$HOME/.vim/undo         " Set backup files directory
-set lazyredraw 											" Don't redraw while executing macros
+" set colorcolumn=79             " Vertical line 80 characters
+set ruler                        " Show cursor position
+set expandtab                    " Use spaces instead of tabs
+set smarttab                     " Be smart when using tabs
+set tabstop=2                    " Insert 2 spaces for a tab
+set shiftwidth=2                 " Reindent by 2 spaces characters when using << or >>
+set noet                         " Do not replace tab by spaces in insert mode
+set mouse=a                      " Enable mouse
+set clipboard=unnamed            " Use the system clipboard (not vim's)
+" set nowrap                     " Stop lines breaking
+set wrap                         " Word wrapping
+set linebreak                    " Break line
+set showbreak=⇇                  " Show ⇇ symbol between 2 breaking lines
+set number                       " Show lines number
+set noswapfile                   " No swap file
+set backup                       " Turn backup on
+set backupdir=$HOME/.vim/backups " Set backup files directory
+set undofile                     " Turn persistent undo on
+set undodir=$HOME/.vim/undo      " Set backup files directory
+set lazyredraw                   " Don't redraw while executing macros
 set hid
-set si                							" Smart indent
-set gdefault          							" Global replace by default
-set hidden 													" Enable hidden buffers
-set ttyfast 												" Fast key repeat
-set binary 													" For editing binaries in a better way
+set si                           " Smart indent
+set gdefault                     " Global replace by default
+set hidden                       " Enable hidden buffers
+set ttyfast                      " Fast key repeat
+set binary                       " For editing binaries in a better way
 set shell=/bin/zsh
-set ttimeoutlen=100 								" Set the timeout much shorter
-set vb t_vb=          							" No beep warning
+set ttimeoutlen=100              " Set the timeout much shorter
+set vb t_vb=                     " No beep warning
 
 " Searching
 " set hlsearch
@@ -383,7 +382,7 @@ nnoremap <leader>gu :GundoToggle<cr>
 let g:gundo_width=50
 
 " InstantMarkdown
-let g:instant_markdown_autostart = 0
+let g:instant_markdown_autostart = 1
 let g:instant_markdown_slow = 1
 
 " MRU
