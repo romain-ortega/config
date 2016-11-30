@@ -15,31 +15,31 @@ To install macvim with lua support :
 
 ## Features
 File tree and fuzzy search
-![Preview](https://raw.githubusercontent.com/romain-ortega/config/master/img/filetree_fuzzysearch.gif)
+![Preview](https://media.giphy.com/media/3o6Ztn4cYuskoSE0N2/source.gif)
 ***
 
 See most recent files
-![Preview](https://raw.githubusercontent.com/romain-ortega/config/master/img/mru.gif)
+![Preview](https://media.giphy.com/media/3o6Zt9QOGngcwGk5Rm/source.gif)
 ***
 
 Live refresh and preview for markdown
-![Preview](https://raw.githubusercontent.com/romain-ortega/config/master/img/instant_markdown_preview.gif)
+![Preview](https://media.giphy.com/media/l0HlKsY05QvecJtSw/source.gif)
 ***
 
 Easy folding with `<space>`
-![Preview](https://raw.githubusercontent.com/romain-ortega/config/master/img/fold.gif)
+![Preview](https://media.giphy.com/media/3o6Zt7PuBBWFuuGs24/source.gif)
 ***
 
 Easy align
-![Preview](https://raw.githubusercontent.com/romain-ortega/config/master/img/easy_align.gif)
+![Preview](https://media.giphy.com/media/3o6Zto5DwboJpa1CrC/source.gif)
 ***
 
 Vim undo tree in style with `<leader>gu`
-![Preview](https://raw.githubusercontent.com/romain-ortega/config/master/img/gundo.png)
+![Preview](http://i.imgur.com/hmXlvfE.png)
 ***
 
 Advanced syntax checking
-![Preview](https://raw.githubusercontent.com/romain-ortega/config/master/img/syntax_check.png)
+![Preview](http://i.imgur.com/euBJJHX.png)
 ***
 
 ### Others
