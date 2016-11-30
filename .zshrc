@@ -1,11 +1,11 @@
-#source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_THEME="agnoster"
 ZSH=$HOME/.oh-my-zsh
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git brew)
-PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin"
+PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/opt/local/bin"
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export GOPATH='$HOME/golang'
@@ -14,6 +14,8 @@ export GOPATH=$HOME/golang
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export EDITOR=vim
+export CC=gcc
+export CCX=g++
 autoload -U colors && colors
 
 ###############################################
@@ -86,8 +88,8 @@ unsetopt hup
 # Historique des commandes
 ###############################################
 
-export HISTORY=1000
-export SAVEHIST=1000
+export HISTORY=10000
+export SAVEHIST=100000
 export HISTFILE=$HOME/.history
 setopt inc_append_history
 setopt hist_ignore_dups
