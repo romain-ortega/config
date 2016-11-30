@@ -4,7 +4,7 @@ Configuration for zsh, vim and more. Design for mac OS.
 ## Pre-requisites
 Vim 7.3+ compiled with Python support, and Python 2.4+.
 The distribution also requires macvim (with lua support), ctags, git, clang.  
-For the most comfortable experience, the MacVim.  
+For the most comfortable experience, use MacVim.  
 
 To install macvim with lua support :  
 `brew install macvim --with-cscope --with-lua --override-system-vim`
@@ -30,7 +30,7 @@ Easy folding with `<space>`
 ![Preview](https://raw.githubusercontent.com/romain-ortega/config/master/img/fold.gif)
 ***
 
-Vim undo tree in style
+Vim undo tree in style with `<leader>gu`
 ![Preview](https://raw.githubusercontent.com/romain-ortega/config/master/img/gundo.png)
 ***
 
