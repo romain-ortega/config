@@ -1,5 +1,5 @@
 # config
-Configuration for zsh, vim and more. Design for mac OS.
+Configuration for zsh, vim and more. Designed for mac OS.
 
 ## Pre-requisites
 Vim 7.3+ compiled with Python support, and Python 2.4+.
@@ -10,36 +10,42 @@ To install macvim with lua support :
 `brew install macvim --with-cscope --with-lua --override-system-vim`
 
 ## Installation
-`git clone https://github.com/romain-ortega/config.git /tmp/config && \
-(cd /tmp/config && mv ~/.vimrc ~/.vimrc.old && mv ~/.vim/autoload ~/.vim/autoload.old && mv ~/.vim/bundle/ ~/.vim/bundle.old/)`
+Don't be scared, the installation script will keep your existing configuration safe.  
+`bash <(curl -s https://raw.githubusercontent.com/romain-ortega/config/master/install.sh)`
+  
+Don't forget to configure YouCompleteMe. You can do it by executing this command :  
+`(cd ~/.vim/bundle/YouCompleteMe && ./install.py --all)`
 
 ## Features
 File tree and fuzzy search
-![Preview](https://media.giphy.com/media/3o6Ztn4cYuskoSE0N2/source.gif)
+[Preview](http://i.imgur.com/Qubq3LW.gif)
 ***
 
 See most recent files
-![Preview](https://media.giphy.com/media/3o6Zt9QOGngcwGk5Rm/source.gif)
+[Preview](http://i.imgur.com/Nf09Zq6.gif)
 ***
 
 Live refresh and preview for markdown
-![Preview](https://media.giphy.com/media/l0HlKsY05QvecJtSw/source.gif)
+[Preview](https://media.giphy.com/media/l0HlKsY05QvecJtSw/source.gif)
 ***
 
 Easy folding with `<space>`
-![Preview](https://media.giphy.com/media/3o6Zt7PuBBWFuuGs24/source.gif)
+[Preview](http://i.imgur.com/oSEdI28.gif)
 ***
 
 Easy align
-![Preview](https://media.giphy.com/media/3o6Zto5DwboJpa1CrC/source.gif)
+[Preview](http://i.imgur.com/3g6WCja.gif)
 ***
 
 Vim undo tree in style with `<leader>gu`
-![Preview](http://i.imgur.com/hmXlvfE.png)
+[Preview](http://i.imgur.com/hmXlvfE.png)
 ***
 
 Advanced syntax checking
-![Preview](http://i.imgur.com/euBJJHX.png)
+[Preview](http://i.imgur.com/euBJJHX.png)
+***
+
+Good autocompletion, go to declaration, go to definition and many more.
 ***
 
 ### Others
