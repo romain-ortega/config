@@ -36,8 +36,8 @@ Plug 'junegunn/vim-easy-align'         " Easy align
 Plug 'sjl/gundo.vim'                   " Visualize Vim's undo tree
 Plug 'suan/vim-instant-markdown'       " Live refresh when writing markdown
 Plug 'yegappan/mru'                    " See most recent edited files
-Plug 'mhinz/vim-startify'			   " Fancy start screen
-Plug 'Shougo/vinarise.vim'			   " Ultimate hex editing system
+Plug 'mhinz/vim-startify'              " Fancy start screen
+Plug 'Shougo/vinarise.vim'             " Ultimate hex editing system
 
 " Custom
 Plug 'tpope/vim-surround'
