@@ -8,7 +8,7 @@ npm -g install instant-markdown-d && npm install -g typescript
 mkdir $HOME/.vim/tmp
 
 # Check if Vundle exist, else install it
-if [[ ! -d $HOME/.vim/bundle/Vundle.vim ]]; then
-	git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+if [[ ! -d $HOME/.vim/autoload/plug.vim ]]; then
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
-vim +PluginInstall +qall
+vim +PluginInstall! +qall
