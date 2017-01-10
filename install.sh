@@ -7,6 +7,9 @@ mkdir $HOME/.vim/colors && cp colors/Ronokai.vim
 npm -g install instant-markdown-d && npm install -g typescript
 brew install ctags
 mkdir $HOME/.vim/tmp
+cd /tmp/config && cp -r ultisnips ~/.vim/ultisnips
+mkdir ~/.vim/autoload
+cp autocomplete.vim ~/.vim/autoload
 
 # Check if Vundle exist, else install it
 if [[ ! -d $HOME/.vim/bundle/Vundle.vim ]]; then
