@@ -1,8 +1,10 @@
 #!/bin/sh
+brew install node
+brew install macvim --with-cscope --with-lua --override-system-vim
 git clone https://github.com/romain-ortega/config.git /tmp/config && cd /tmp/config && mv ~/.vimrc ~/.vimrc.old && mv ~/.vim/autoload ~/.vim/autoload.old && mv ~/.vim/bundle/ ~/.vim/bundle.old/
 
 mkdir -p ~/.vim/backups
-cp .vimrc ~/.vimrc
+cd /tmp/config && cp .vimrc ~/.vimrc
 mkdir ~/.vim/colors
 cp colors/Ronokai.vim ~/.vim/colors
 npm -g install instant-markdown-d && npm install -g typescript
