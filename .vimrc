@@ -2,70 +2,70 @@ set nocompatible " Be iMproved, required
 
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call plug#begin()
+call vundle#begin()
 
 "*****************************************************************************
 " Plugins list
 "*****************************************************************************
 
-Plug 'VundleVim/Vundle.vim'            " Let Vundle manage Vundle
-Plug 'scrooloose/nerdtree'             " File tree
-Plug 'scrooloose/nerdcommenter'        " Smart comments
-Plug 'tpope/vim-fugitive'              " Git commands (:Gblame, :Gdiff, ..)
-Plug 'ctrlpvim/ctrlp.vim'              " Find file easily
-Plug 'vim-airline/vim-airline'         " Visual bar (at the bottom) and theme
-Plug 'vim-airline/vim-airline-themes'
-Plug 'flazz/vim-colorschemes'          " Packages themes
-Plug 'airblade/vim-gitgutter'          " Shows a git diff in the gutter (sign column) and stages/undoes hunks
-Plug 'sheerun/vim-polyglot'            " A collection of language packs for Vim
-Plug 'vim-scripts/CSApprox'            " Make gvim-only colorschemes work transparently in terminal vim
-Plug 'bronson/vim-trailing-whitespace' " This plugin causes all trailing whitespace to be highlighted
-Plug 'jiangmiao/auto-pairs'            " Insert or delete brackets, parens, quotes in pair
-Plug 'majutsushi/tagbar'               " Tagbar displays the tags of the current file in a sidebar
-Plug 'scrooloose/syntastic'            " Syntax checking hacks for vim
-Plug 'terryma/vim-multiple-cursors'    " Multiple Cursors
-Plug 'Yggdroot/indentLine'             " Display the indention levels with thin vertical lines
-Plug 'Shougo/vimproc.vim'              " Interactive command execution in Vim
-Plug 'xolox/vim-misc'                  " Vim Session (:SaveSession, :OpenSession, :CloseSession)
-Plug 'xolox/vim-session'
-Plug 'SirVer/ultisnips'                " Snippets
-Plug 'honza/vim-snippets'
-Plug 'fatih/vim-go'                    " Golang
-Plug 'dsawardekar/ember.vim'           " Ember.js
-Plug 'junegunn/vim-easy-align'         " Easy align
-Plug 'sjl/gundo.vim'                   " Visualize Vim's undo tree
-Plug 'suan/vim-instant-markdown'       " Live refresh when writing markdown
-Plug 'yegappan/mru'                    " See most recent edited files
-Plug 'mhinz/vim-startify'              " Fancy start screen
-Plug 'Shougo/vinarise.vim'             " Ultimate hex editing system
+Plugin 'VundleVim/Vundle.vim'            " Let Vundle manage Vundle
+Plugin 'scrooloose/nerdtree'             " File tree
+Plugin 'scrooloose/nerdcommenter'        " Smart comments
+Plugin 'tpope/vim-fugitive'              " Git commands (:Gblame, :Gdiff, ..)
+Plugin 'ctrlpvim/ctrlp.vim'              " Find file easily
+Plugin 'vim-airline/vim-airline'         " Visual bar (at the bottom) and theme
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'flazz/vim-colorschemes'          " Packages themes
+Plugin 'airblade/vim-gitgutter'          " Shows a git diff in the gutter (sign column) and stages/undoes hunks
+Plugin 'sheerun/vim-polyglot'            " A collection of language packs for Vim
+Plugin 'vim-scripts/CSApprox'            " Make gvim-only colorschemes work transparently in terminal vim
+Plugin 'bronson/vim-trailing-whitespace' " This plugin causes all trailing whitespace to be highlighted
+Plugin 'jiangmiao/auto-pairs'            " Insert or delete brackets, parens, quotes in pair
+Plugin 'majutsushi/tagbar'               " Tagbar displays the tags of the current file in a sidebar
+Plugin 'scrooloose/syntastic'            " Syntax checking hacks for vim
+Plugin 'terryma/vim-multiple-cursors'    " Multiple Cursors
+Plugin 'Yggdroot/indentLine'             " Display the indention levels with thin vertical lines
+Plugin 'Shougo/vimproc.vim'              " Interactive command execution in Vim
+Plugin 'xolox/vim-misc'                  " Vim Session (:SaveSession, :OpenSession, :CloseSession)
+Plugin 'xolox/vim-session'
+Plugin 'SirVer/ultisnips'                " Snippets
+Plugin 'honza/vim-snippets'
+Plugin 'fatih/vim-go'                    " Golang
+Plugin 'dsawardekar/ember.vim'           " Ember.js
+Plugin 'junegunn/vim-easy-align'         " Easy align
+Plugin 'sjl/gundo.vim'                   " Visualize Vim's undo tree
+Plugin 'suan/vim-instant-markdown'       " Live refresh when writing markdown
+Plugin 'yegappan/mru'                    " See most recent edited files
+Plugin 'mhinz/vim-startify'              " Fancy start screen
+Plugin 'Shougo/vinarise.vim'             " Ultimate hex editing system
 
 " Custom
-Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator' " :YcmGenerateConfig /!\ CmakeList.txt
-Plug 'mattn/emmet-vim' " <c-m><leader>
-Plug 'michalliu/sourcebeautify.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator' " :YcmGenerateConfig /!\ CmakeList.txt
+Plugin 'mattn/emmet-vim' " <c-m><leader>
+Plugin 'michalliu/sourcebeautify.vim'
 
 " Javascript
-Plug 'moll/vim-node'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'marijnh/tern_for_vim'
-Plug 'burnettk/vim-angular'
-Plug 'mxw/vim-jsx'
-Plug 'leafgarland/typescript-vim'
+Plugin 'moll/vim-node'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'burnettk/vim-angular'
+Plugin 'mxw/vim-jsx'
+Plugin 'leafgarland/typescript-vim'
 
 " CSS
-Plug 'wavded/vim-stylus'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'groenewege/vim-less'
-Plug 'gorodinskiy/vim-coloresque'
+Plugin 'wavded/vim-stylus'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'groenewege/vim-less'
+Plugin 'gorodinskiy/vim-coloresque'
 
 " HTML
-Plug 'amirh/HTML-AutoCloseTag'
-Plug 'tpope/vim-haml'
-Plug 'digitaltoad/vim-jade'
+Plugin 'amirh/HTML-AutoCloseTag'
+Plugin 'tpope/vim-haml'
+Plugin 'digitaltoad/vim-jade'
 
-call plug#end()
+call vundle#end()
 filetype plugin on
 syntax on
 let mapleader=","
