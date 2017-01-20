@@ -52,3 +52,6 @@ Good autocompletion, go to declaration, go to definition and many more.
 To have a better auto completion and IDE like features (Go to definition, declaration) you will need to exec these commands for every new project :  
 `ctags -R --exclude=.git .`  
 `:YcmGenerateConfig`
+
+To load Iterm 2 preferences:  
+`cp /tmp/config/com.googlecode.iterm2 ~/Desktop/com.googlecode.iterm2 && defaults read ~/Desktop/com.googlecode.iterm2 && killall cfprefsd`
