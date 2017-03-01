@@ -38,15 +38,17 @@ Plugin 'suan/vim-instant-markdown'       " Live refresh when writing markdown
 Plugin 'yegappan/mru'                    " See most recent edited files
 Plugin 'mhinz/vim-startify'              " Fancy start screen
 Plugin 'Shougo/vinarise.vim'             " Ultimate hex editing system
+Plugin 'soramugi/auto-ctags.vim'         " Auto ctags
+Plugin 'djoshea/vim-autoread'            " Auto reload files
 
-" Custom
+" Custom bundles
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rdnetto/YCM-Generator' " :YcmGenerateConfig /!\ CmakeList.txt
-Plugin 'mattn/emmet-vim' " <c-m><leader>
+Plugin 'mattn/emmet-vim'       " <c-m><leader>
 Plugin 'michalliu/sourcebeautify.vim'
 
-" Javascript
+" Javascript Bundle
 Plugin 'moll/vim-node'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'marijnh/tern_for_vim'
@@ -54,13 +56,13 @@ Plugin 'burnettk/vim-angular'
 Plugin 'mxw/vim-jsx'
 Plugin 'leafgarland/typescript-vim'
 
-" CSS
+" CSS Bundle
 Plugin 'wavded/vim-stylus'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'groenewege/vim-less'
 Plugin 'gorodinskiy/vim-coloresque'
 
-" HTML
+" HTML Bundle
 Plugin 'amirh/HTML-AutoCloseTag'
 Plugin 'tpope/vim-haml'
 Plugin 'digitaltoad/vim-jade'
@@ -79,8 +81,8 @@ let mapleader=","
 set ruler                        " Show cursor position
 set expandtab                    " Use spaces instead of tabs
 set smarttab                     " Be smart when using tabs
-set tabstop=4                    " Insert 2 spaces for a tab
-set shiftwidth=4                 " Reindent by 2 spaces characters when using << or >>
+set tabstop=2                    " Insert 2 spaces for a tab
+set shiftwidth=2                 " Reindent by 2 spaces characters when using << or >>
 set noet                         " Do not replace tab by spaces in insert mode
 set mouse=a                      " Enable mouse
 set clipboard=unnamed            " Use the system clipboard (not vim's)
@@ -120,6 +122,9 @@ au BufRead,BufNewFile *.go set filetype=go
 " Run golint every time a .go file is saved
 autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow
 
+let g:auto_ctags_tags_name = '.tags'
+let g:auto_ctags = 1
+
 " Auto update ctags on save
 function! DelTagOfFile(file)
   let fullpath = a:file
@@ -140,13 +145,6 @@ function! UpdateTags()
   let resp = system(cmd)
 endfunction
 autocmd BufWritePost *.cpp,*.h,*.c call UpdateTags()
-
-" make/cmake
-augroup vimrc-make-cmake
-		autocmd!
-		autocmd FileType make setlocal noexpandtab
-		autocmd BufNewFile,BufRead CMakeLists.txt setlocal filetype=cmake
-augroup END
 
 " make/cmake
 augroup vimrc-make-cmake
@@ -249,7 +247,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_mode_map={"mode":"active", "active_filetypes": [], "passive_filetypes": []}
-let g:syntastic_cpp_check_header = 1
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 " YouCompleteMe
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
