@@ -67,6 +67,7 @@ if [[ "$VIMRC" = true ]]; then
 	brew install ctags
 	mkdir $HOME/.vim/tmp
 	cp -r ultisnips ~/.vim/ultisnips
+	cp -r plugin ~/.vim/plugin
 	mkdir ~/.vim/autoload
 	cp autocomplete.vim ~/.vim/autoload
 	cp .ycm_extra_conf.py ~/.ycm_extra_conf.py

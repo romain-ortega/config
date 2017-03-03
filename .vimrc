@@ -474,16 +474,6 @@ set t_Co=256
 set guioptions=egmrti
 set gfn=Monospace\ 10
 
-" Macvim
-if has("gui_running")
-syntax on
-" colorscheme one
-" colorscheme material-theme
-colorscheme lucario
-set guioptions-=r
-set guioptions-=R
-set guioptions-=L
-endif
 
 let no_buffers_menu=1
 if !exists('g:not_finsh_neobundle')
@@ -491,6 +481,16 @@ colorscheme Ronokai
 set background=dark
 endif
 
+" Macvim
+if has("gui_running")
+	syntax on
+	" colorscheme one
+	" colorscheme material-theme
+	colorscheme lucario
+	set guioptions-=r
+	set guioptions-=R
+	set guioptions-=L
+endif
 " Status bar
 set laststatus=2
 
