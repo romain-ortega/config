@@ -8,6 +8,9 @@ usage() {
   # -f [ --force  ]        override if necessary";
 	exit
 }
+command_exists() {
+	type "$1" &> /dev/null ;
+}
 
 # No argument
 if [[ $# -eq 0 ]] ; then
@@ -48,7 +51,7 @@ done
 
 if [[ "$VIMRC" = true ]]; then
 	# Check if brew is installed, else install it
-	if [ ! type "brew" > /dev/null ]; then
+	if ! command_exists brew ; then
 	  # Install brew here
 	  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	fi
@@ -84,7 +87,10 @@ if [[ "$ZSHRC" = true ]]; then
 	mv ~/.zshrc ~/.zshrc.old
 	cp .zshrc ~/.zshrc
 	# Install zsh plugins
-	mkdir -p ~/.oh-my-zsh/plugins
+	if [[ ! -d $HOME/.oh-my-zsh ]]; then
+		sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	fi
+	mkdir ~/.oh-my-zsh/plugins
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins
 	echo "source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> \
 		${ZDOTDIR:-$HOME}/.zshrc

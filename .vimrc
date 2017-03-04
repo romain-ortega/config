@@ -63,7 +63,6 @@ Plugin 'groenewege/vim-less'
 Plugin 'gorodinskiy/vim-coloresque'
 
 " HTML Bundle
-Plugin 'amirh/HTML-AutoCloseTag'
 Plugin 'tpope/vim-haml'
 Plugin 'digitaltoad/vim-jade'
 
