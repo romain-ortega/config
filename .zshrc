@@ -1,4 +1,3 @@
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_THEME="agnoster"
 ZSH=$HOME/.oh-my-zsh
 ENABLE_CORRECTION="true"

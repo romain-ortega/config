@@ -90,8 +90,8 @@ if [[ "$ZSHRC" = true ]]; then
 	if [[ ! -d $HOME/.oh-my-zsh ]]; then
 		sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	fi
-	mkdir ~/.oh-my-zsh/plugins
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins
+	mkdir -p ~/.oh-my-zsh/plugins
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/
 	echo "source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> \
 		${ZDOTDIR:-$HOME}/.zshrc
 fi

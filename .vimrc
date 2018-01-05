@@ -30,7 +30,6 @@ Plugin 'xolox/vim-misc'                  " Vim Session (:SaveSession, :OpenSessi
 Plugin 'xolox/vim-session'
 Plugin 'SirVer/ultisnips'                " Snippets
 Plugin 'honza/vim-snippets'
-Plugin 'fatih/vim-go'                    " Golang
 Plugin 'dsawardekar/ember.vim'           " Ember.js
 Plugin 'junegunn/vim-easy-align'         " Easy align
 Plugin 'sjl/gundo.vim'                   " Visualize Vim's undo tree
