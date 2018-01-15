@@ -104,6 +104,7 @@ set binary                       " For editing binaries in a better way
 set shell=/bin/zsh
 set ttimeoutlen=100              " Set the timeout much shorter
 set vb t_vb=                     " No beep warning
+set backspace=indent,eol,start   " Fixes backspace issues
 
 " Searching
 " set hlsearch
