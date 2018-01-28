@@ -248,6 +248,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_mode_map={"mode":"active", "active_filetypes": [], "passive_filetypes": []}
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_c_include_dirs = [ '../include', 'include', '../inc', 'inc' ]
 
 " YouCompleteMe
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
