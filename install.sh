@@ -94,6 +94,7 @@ if [[ "$ZSHRC" = true ]]; then
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/
 	echo "source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> \
 		${ZDOTDIR:-$HOME}/.zshrc
+	brew install acrogenesis/macchanger/macchanger
 fi
 if [[ "$ITERM" = true ]]; then
 	cp /tmp/config/com.googlecode.iterm2 ~/Desktop/com.googlecode.iterm2 && \
