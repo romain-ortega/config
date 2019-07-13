@@ -1,5 +1,8 @@
 set nocompatible " Be iMproved, required
 
+"*****************************************************************************
+" Vundle plugin manager
+"*****************************************************************************
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -11,7 +14,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'            " Let Vundle manage Vundle
 Plugin 'scrooloose/nerdtree'             " File tree
 Plugin 'scrooloose/nerdcommenter'        " Smart comments
-Plugin 'tpope/vim-fugitive'              " Git commands (:Gblame, :Gdiff, ..)
+" Plugin 'tpope/vim-fugitive'              " Git commands (:Gblame, :Gdiff, ..)
 Plugin 'ctrlpvim/ctrlp.vim'              " Find file easily
 Plugin 'vim-airline/vim-airline'         " Visual bar (at the bottom) and theme
 Plugin 'vim-airline/vim-airline-themes'
@@ -20,39 +23,26 @@ Plugin 'airblade/vim-gitgutter'          " Shows a git diff in the gutter (sign 
 Plugin 'sheerun/vim-polyglot'            " A collection of language packs for Vim
 Plugin 'vim-scripts/CSApprox'            " Make gvim-only colorschemes work transparently in terminal vim
 Plugin 'bronson/vim-trailing-whitespace' " This plugin causes all trailing whitespace to be highlighted
-Plugin 'jiangmiao/auto-pairs'            " Insert or delete brackets, parens, quotes in pair
+" Plugin 'jiangmiao/auto-pairs'            " Insert or delete brackets, parens, quotes in pair
 Plugin 'majutsushi/tagbar'               " Tagbar displays the tags of the current file in a sidebar
 Plugin 'scrooloose/syntastic'            " Syntax checking hacks for vim
 Plugin 'terryma/vim-multiple-cursors'    " Multiple Cursors
-Plugin 'Yggdroot/indentLine'             " Display the indention levels with thin vertical lines
+" Plugin 'Yggdroot/indentLine'             " Display the indention levels with thin vertical lines
 Plugin 'Shougo/vimproc.vim'              " Interactive command execution in Vim
 Plugin 'xolox/vim-misc'                  " Vim Session (:SaveSession, :OpenSession, :CloseSession)
 Plugin 'xolox/vim-session'
 Plugin 'SirVer/ultisnips'                " Snippets
 Plugin 'honza/vim-snippets'
-Plugin 'dsawardekar/ember.vim'           " Ember.js
-Plugin 'junegunn/vim-easy-align'         " Easy align
-Plugin 'sjl/gundo.vim'                   " Visualize Vim's undo tree
 Plugin 'suan/vim-instant-markdown'       " Live refresh when writing markdown
-Plugin 'yegappan/mru'                    " See most recent edited files
 Plugin 'mhinz/vim-startify'              " Fancy start screen
 Plugin 'Shougo/vinarise.vim'             " Ultimate hex editing system
-Plugin 'soramugi/auto-ctags.vim'         " Auto ctags
 Plugin 'djoshea/vim-autoread'            " Auto reload files
-
-" Custom bundles
-Plugin 'tpope/vim-surround'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator' " :YcmGenerateConfig /!\ CmakeList.txt
-Plugin 'mattn/emmet-vim'       " <c-m><leader>
-Plugin 'michalliu/sourcebeautify.vim'
 
 " Javascript Bundle
 Plugin 'moll/vim-node'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'burnettk/vim-angular'
+Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'burnettk/vim-angular'
 Plugin 'leafgarland/typescript-vim'
 
 " CSS Bundle
@@ -78,7 +68,7 @@ let mapleader=","
 " set colorcolumn=79             " Vertical line 80 characters
 set ruler                        " Show cursor position
 set expandtab                    " Use spaces instead of tabs
-set smarttab                     " Be smart when using tabs
+"set smarttab                     " Be smart when using tabs
 set tabstop=2                    " Insert 2 spaces for a tab
 set shiftwidth=2                 " Reindent by 2 spaces characters when using << or >>
 set noet                         " Do not replace tab by spaces in insert mode
@@ -231,7 +221,7 @@ noremap <leader>b :CtrlPBuffer<CR>
 " Emmet
 let g:user_emmet_leader_key='<c-m>' " Don't forgive to press leader then
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,jsx,js EmmetInstall
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -249,36 +239,6 @@ let g:syntastic_mode_map={"mode":"active", "active_filetypes": [], "passive_file
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_c_include_dirs = [ '../include', 'include', '../inc', 'inc' ]
-
-" YouCompleteMe
-let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
-let g:ycm_key_list_accept_completion = ['<C-y>']
-let g:ycm_min_num_of_chars_for_completion = 1
-let g:ycm_path_to_python_interpreter="/usr/bin/python"
-let g:ycm_show_diagnostics_ui = 0
-let g:tern_show_argument_hints='on_hold'
-let g:tern_map_keys=1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_collect_identifiers_from_comments_and_strings = 1
-let g:ycm_collect_identifiers_from_tags_files = 1 " Ctags
-let g:ycm_auto_start_csharp_server = 0
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_filetype_blacklist = {
-	\ 'tagbar' : 1,
-	\ 'qf' : 1,
-	\ 'notes' : 1,
-	\ 'markdown' : 1,
-	\ 'unite' : 1,
-	\ 'text' : 1,
-	\ 'vimwiki' : 1,
-	\ 'pandoc' : 1,
-	\ 'infolog' : 1,
-	\ 'mail' : 1
-\}
 
 " Sessions
 let g:session_directory = "~/.vim/session"
@@ -358,19 +318,6 @@ if !exists('g:neocomplcache_keyword_patterns')
 endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType hbs,html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-if !exists('g:neocomplcache_force_omni_patterns')
-        let g:neocomplcache_force_omni_patterns = {}
-endif
-let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
 " Prevent UltiSnips from removing our carefully-crafted mappings.
 let g:UltiSnipsMappingsToIgnore = ['autocomplete']
 
@@ -388,12 +335,6 @@ endif
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
 let g:UltiSnipsSnippetDirectories = ['ultisnips']
 
-" IndentLine
-let g:indentLine_enabled = 1
-let g:indentLine_concealcursor = 0
-let g:indentLine_char = '┆'
-let g:indentLine_faster = 1
-
 " Custom configs
 let g:javascript_enable_domhtmlcss = 1
 
@@ -407,18 +348,9 @@ augroup END
 xmap ga <plug>(EasyAlign)
 nmap ga <plug>(EasyAlign)
 
-" Gundo
-nnoremap <leader>gu :GundoToggle<cr>
-let g:gundo_width=50
-
 " InstantMarkdown
 let g:instant_markdown_autostart = 1
-let g:instant_markdown_slow = 1
-
-" MRU
-let MRU_Entries = 80
-let MRU_File = $HOME . '/.vim/tmp/vim_mru_files'
-map <leader>r :MRU<cr>
+let g:instant_markdown_slow = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Airline
