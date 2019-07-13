@@ -1,10 +1,16 @@
+###############################################
+# Shell init
+###############################################
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_THEME="agnoster"
 ZSH=$HOME/.oh-my-zsh
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(git brew)
-PATH="~/.brew/opt/sqlite/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/opt/local/bin"
+PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/opt/local/bin:~/.nvm/versions/node/v7.10.0/lib/node_modules/node/bin"
+export PATH="$PATH:/Users/macbook/Documents/.nvm/versions/node/v7.10.0/lib/node_modules/node/bin/"
+alias migrate-mongo="/Users/macbook/Documents/.nvm/versions/node/v7.10.0/lib/node_modules/node/bin/migrate-mongo"
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export GOPATH='$HOME/golang'
@@ -18,39 +24,45 @@ export CCX=g++
 autoload -U colors && colors
 
 ###############################################
+# Prompt
+###############################################
+git_prompt() {
+  branch=$(git branch | awk '/^\*/ { print $2 }')
+  echo $branch
+}
+
+precmd() {
+	PROMPT="%{$fg[yellow]%}%~ %{$fg[blue]%}% $(git_prompt)%  %{$reset_color%}$ % "
+}
+
+PROMPT="%{$fg[yellow]%}%~ %{$fg[blue]%}% $(git_prompt)%  %{$reset_color%}$ % "
+
+
+###############################################
+# Git                                    #
+###############################################
+alias glg="git log --pretty=format:'%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph"
+alias gsp="git stash pop"
+
+###############################################
 # Alias
 ###############################################
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,node_modules,.nyc_output,.tags}'
 alias vimrc='vim ~/.vimrc'
-alias uuid='uuidgen'
-alias pull='git pull'
-alias add='git add'
-alias push='git push'
-alias commit='git commit -m'
 alias zshrc="vim ~/.zshrc"
-PROMPT="%{$fg[yellow]%}%~ %{$reset_color%}$ % "
+alias uuid='uuidgen'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
-MSG='auto'
-alias gm="git commit -m \'auto\'"
-alias gs="git stash"
-alias gsp="git stash pop"
-alias auto='make fclean; git add *; gm; git push'
-alias gen="~/c/.project/gen"
 alias c='clear'
 alias s='cd ..'
 alias ss='cd ../..'
-alias m='mutt -y'
-alias md='mkdir'
-alias rd='rmdir'
 alias upgrade='sudo softwareupdate -i -a'
 alias rf='rm -rf'
-case $TERM in
-   xterm*)
-       precmd () {print -Pn "\e]0;%n@%m: %~\a"}
-       ;;
-esac
 
+###############################################
+# Colors
+###############################################
 if [ -x /usr/bin/dircolors ]
 then
   if [ -r ~/.dir_colors ]
@@ -64,6 +76,9 @@ then
   fi
 fi
 
+###############################################
+# ZSH options
+###############################################
 setopt correct
 setopt clobber
 setopt ignore_eof
@@ -80,13 +95,8 @@ unsetopt bg_nice
 unsetopt hup
 
 ###############################################
-# Trucs utiles
+# Historic
 ###############################################
-
-###############################################
-# Historique des commandes
-###############################################
-
 export HISTORY=10000
 export SAVEHIST=100000
 export HISTFILE=$HOME/.history
@@ -95,3 +105,7 @@ setopt hist_ignore_dups
 setopt hist_save_no_dups
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
