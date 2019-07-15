@@ -1,5 +1,8 @@
-# config
+# My config
 Configuration for zsh, vim and more. Designed for mac OS.
+
+## ZSH Shell preview
+![zsh preview](https://i.imgur.com/BWzZLLw.png)
 
 ## Pre-requisites
 Vim 7.3+ compiled with Python support, and Python 2.4+.
@@ -45,13 +48,3 @@ Advanced syntax checking
 [Preview](http://i.imgur.com/euBJJHX.png)
 ***
 
-Good autocompletion, go to declaration, go to definition and many more.
-***
-
-### Others
-To have a better auto completion and IDE like features (Go to definition, declaration) you will need to exec these commands for every new project :  
-`ctags -R --exclude=.git .`  
-`:YcmGenerateConfig`
-
-To load Iterm 2 preferences:  
-`cp /tmp/config/com.googlecode.iterm2 ~/Desktop/com.googlecode.iterm2 && defaults read ~/Desktop/com.googlecode.iterm2 && killall cfprefsd`
