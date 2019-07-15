@@ -2,7 +2,7 @@
 Configuration for zsh, vim and more. Designed for mac OS.
 
 ## ZSH Shell preview
-![zsh preview](https://i.imgur.com/BWzZLLw.png)
+![zsh preview](https://i.imgur.com/ARldzoR.png)
 
 ## Pre-requisites
 Vim 7.3+ compiled with Python support, and Python 2.4+.
