@@ -1,7 +1,20 @@
 ###############################################
-# Shell init
+# Oh My Zsh plugins
 ###############################################
 source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+plugins=(
+	git
+	brew
+	git-flow
+	docker
+	colored-man-pages
+	git-auto-fetch
+	heroku
+)
+
+###############################################
+# Env
+###############################################
 ZSH_THEME="agnoster"
 ZSH=$HOME/.oh-my-zsh
 ENABLE_CORRECTION="true"
@@ -21,7 +34,6 @@ export PATH=$PATH:$GOPATH/bin
 export EDITOR=vim
 export CC=gcc
 export CCX=g++
-autoload -U colors && colors
 
 ###############################################
 # Prompt
@@ -63,6 +75,7 @@ alias rf='rm -rf'
 ###############################################
 # Colors
 ###############################################
+autoload -U colors && colors
 if [ -x /usr/bin/dircolors ]
 then
   if [ -r ~/.dir_colors ]
