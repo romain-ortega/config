@@ -39,8 +39,11 @@ export CCX=g++
 # Prompt
 ###############################################
 git_prompt() {
-  branch=$(git branch | awk '/^\*/ { print $2 }')
-  echo $branch
+	is_git_enabled=$(git rev-parse --is-inside-work-tree 2> /dev/null)
+  if [[ $is_git_enabled == "true" ]]; then
+		branch=$(git branch | awk '/^\*/ { print $2 }')
+		echo "$branch "
+	fi
 }
 
 precmd() {
