@@ -1,16 +1,24 @@
 ###############################################
-# Oh My Zsh plugins
+# ZSH plugins (with Antigen)
 ###############################################
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-plugins=(
-	git
-	brew
-	git-flow
-	docker
-	colored-man-pages
-	git-auto-fetch
-	heroku
-)
+# curl -L git.io/antigen > antigen.zsh
+
+source ~/.zsh/antigen.zsh
+
+antigen bundle brew
+antigen bundle colored-man-pages
+antigen bundle docker
+antigen bundle git
+antigen bundle git-auto-fetch
+antigen bundle git-flow
+antigen bundle heroku
+antigen bundle pip
+antigen bundle command-not-found
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen theme agnoster
+
+antigen apply
 
 ###############################################
 # Env
@@ -20,17 +28,10 @@ ZSH=$HOME/.oh-my-zsh
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-plugins=(git brew)
-PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/opt/local/bin:~/.nvm/versions/node/v7.10.0/lib/node_modules/node/bin"
-export PATH="$PATH:/Users/macbook/Documents/.nvm/versions/node/v7.10.0/lib/node_modules/node/bin/"
-alias migrate-mongo="/Users/macbook/Documents/.nvm/versions/node/v7.10.0/lib/node_modules/node/bin/migrate-mongo"
 source $ZSH/oh-my-zsh.sh
+
 export LANG=en_US.UTF-8
-export GOPATH='$HOME/golang'
 export SSH_KEY_PATH="~/.ssh/dsa_id"
-export GOPATH=$HOME/golang
-export GOROOT=/usr/local/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
 export EDITOR=vim
 export CC=gcc
 export CCX=g++
@@ -47,14 +48,14 @@ git_prompt() {
 }
 
 precmd() {
-	PROMPT="%{$fg[yellow]%}%~ %{$fg[blue]%}% $(git_prompt)%  %{$reset_color%}$ % "
+	PROMPT="%{$fg[yellow]%}%~ %{$fg[blue]%}% $(git_prompt)% %{$reset_color%}$ % "
 }
 
 PROMPT="%{$fg[yellow]%}%~ %{$fg[blue]%}% $(git_prompt)%  %{$reset_color%}$ % "
 
 
 ###############################################
-# Git                                    #
+# Git                                   
 ###############################################
 alias glg="git log --pretty=format:'%C(yellow)%h%Creset -%C(bold red)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --graph"
 alias gsp="git stash pop"
@@ -120,8 +121,10 @@ setopt inc_append_history
 setopt hist_ignore_dups
 setopt hist_save_no_dups
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source $ZSH/oh-my-zsh.sh
